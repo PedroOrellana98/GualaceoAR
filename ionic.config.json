@@ -1,0 +1,7 @@
+{
+  "name": "GualaceoAR",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
