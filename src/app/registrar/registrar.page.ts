@@ -21,7 +21,6 @@ export class RegistrarPage implements OnInit {
       private router: Router) { 
 
     route.queryParams.subscribe(params => {
-      console.log(params)
       this.nombre = params.nombre
       
     })
@@ -33,7 +32,6 @@ export class RegistrarPage implements OnInit {
   }
 
   async registrar(){
-    console.log(this.usuario);
     this.usuario.rol="cliente";
     let user = this.usuarioService.save(this.usuario);
     if (user == true) {

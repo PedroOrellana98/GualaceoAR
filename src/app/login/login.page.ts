@@ -26,23 +26,22 @@ export class LoginPage implements OnInit {
     const correo = this.usuario.correo
     const clave = this.usuario.clave
     this.usuarioService.findUser(correo, clave).subscribe(data=>{
-      console.log(data[0])
       this.usuario2=data[0]
       try{
-        if(this.usuario2.correo==correo && this.usuario2.clave==clave && this.usuario2.rol=='agente'){
+        if(this.usuario2.correo==correo && this.usuario2.clave==clave && this.usuario2.rol=='administrador'){
           let params: NavigationExtras ={
             queryParams: {
               usuario2: this.usuario2
             }
           }
-          this.route.navigate(['privado/principalAgentes'],params);
+          this.route.navigate(['privado/iglesia'],params);
         }else if(this.usuario2.correo==correo && this.usuario2.clave==clave && this.usuario2.rol=='cliente'){
           let params: NavigationExtras ={
             queryParams: {
               usuario2: this.usuario2
             }
           }
-          this.route.navigate(['publico/principalConductores'],params);
+          this.route.navigate(['privado/iglesia'],params);
         }
       }
       catch(error){console.log('Error: ->', error);
