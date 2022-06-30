@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore} from '@angular/fire/compat/firestore';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Observable } from 'rxjs';
 import { Usuario } from '../domain/usuario';
 
@@ -9,31 +10,32 @@ import { Usuario } from '../domain/usuario';
 export class UsuariosService {
   
 
-  constructor(public afs: AngularFirestore) { }
+  constructor(public afs: AngularFirestore,
+    public afr: AngularFireDatabase ) { }
 
   save(usuario: Usuario){
-    const refUsuarios = this.afs.collection("usuario");
     if(usuario.uid == null){
-      usuario.uid = this.afs.createId();
+      usuario.uid = this.afr.createPushId();
     }
-    refUsuarios.doc(usuario.uid).set(Object.assign({}, usuario));
+    this.afr.object("usuario/" + usuario.uid).set(Object.assign({}, usuario));
     return true;
   }
 
   getUsuarios(): Observable<any[]>{
-    return this.afs.collection("usuario"
-    ).valueChanges();
+    return this.afr.list("usuario/").valueChanges();
   }
 
   findUser(correo: string, clave: string): Observable<any>{
-    console.log('Correo: ' + correo);
-    return this.afs.collection('usuario',
-      ref => ref.where('correo', '==', correo).where('clave','==',clave)).valueChanges();
+    /*this.afr.list('usuario').valueChanges().subscribe(res => {
+      console.log("res" + JSON.stringify(res));
+    });*/
+    return this.afr.list('usuario',
+      ref => ref.orderByChild('correo').equalTo(correo)).valueChanges();
   }
+
   findCorreo(correo: string): Observable<any>{
-    console.log('Correo: ' + correo);
-    return this.afs.collection('usuario',
-      ref => ref.where('correo', '==', correo)).valueChanges();
+    return this.afr.list('usuario',
+      ref => ref.orderByChild('correo').equalTo(correo)).valueChanges();
   }
 
   findId(cedula: string): Observable<any>{
