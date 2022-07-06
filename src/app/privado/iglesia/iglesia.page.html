@@ -1,23 +1,48 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Account</ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-split-pane contentId="content2" [disabled]="!paneEnabled">
+  <ion-menu contentId="content2" menuId="second">
 
-<ion-content class="outer-content">
-  <div padding-top text-center *ngIf="username">
-    <img src="http://www.gravatar.com/avatar?d=mm&s=140" alt="avatar">
-    <h2>{{username}}</h2>
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menu 2</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-    <ion-list inset>
-      <button ion-item (click)="updatePicture()">Update Picture</button>
-      <button ion-item (click)="changeUsername()">Change Username</button>
-      <button ion-item (click)="changePassword()">Change Password</button>
-      <button ion-item (click)="support()">Support</button>
-      <button ion-item (click)="logout()">Logout</button>
-    </ion-list>
-  </div>
-</ion-content>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" menu="second">
+
+        <ion-item routerLink="../../login" routerDirection="root" routerLinkActive="active-item">
+          <ion-label>Login</ion-label> 
+        </ion-item>
+
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="content2"></ion-router-outlet>
+</ion-split-pane>
+
+  <ion-list>
+    <ion-item detail href="https://www.ionicframework.com">
+        <img src="../../../assets/icon/Iglesia.jpeg " style="height: 100px; width: 150px; margin-right: 10px; margin-bottom: 50px; margin-top: 50px;">
+      <ion-label>
+        <h2>Iglesia de Gualaceo</h2>
+        <p>Ubicacion: <a href="https://maps.google.com/?q=-2.889692978845055, -78.77878400341795">Aqui</a></p>
+      </ion-label>
+    </ion-item>
+    <ion-item detail>
+        <img src="../../../assets/icon/CalleGC.jpeg" style="height: 100px; width: 150px; margin-right: 10px; margin-bottom: 50px; margin-top: 50px;">
+      <ion-label>
+        <h2>Calle Gran Colombia</h2>
+        <p>Ubicacion: <a href="https://maps.google.com/?q=-2.8899217627170795, -78.77957520358747">Aqui</a></p>
+      </ion-label>
+    </ion-item>
+    <ion-item detail>
+        <img src="../../../assets/icon/Acueducto.jpg" style="height: 100px; width: 150px; margin-right: 10px; margin-bottom: 50px; margin-top: 50px;">
+      <ion-label>
+        <h2>Canal de riego</h2>
+        <p>Ubicacion: <a href="https://maps.google.com/?q=-2.903407969576315, -78.77972910708982">Aqui</a></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>

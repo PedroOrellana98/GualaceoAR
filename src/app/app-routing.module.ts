@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'privado/iglesia',
     loadChildren: () => import('./privado/iglesia/iglesia.module').then( m => m.IglesiaPageModule)
   },
+  {
+    path: 'codigo-qr',
+    loadChildren: () => import('./codigo-qr/codigo-qr.module').then( m => m.CodigoQRPageModule)
+  },
 
 ];
 
