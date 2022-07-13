@@ -8,8 +8,6 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['./iglesia.page.scss'],
 })
 export class IglesiaPage { 
-
-  paneEnabled = true;
   
   constructor(private route: Router, public menu: MenuController) { }
 

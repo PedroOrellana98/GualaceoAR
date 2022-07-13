@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-iglesia-matriz',
@@ -8,10 +9,20 @@ import { Router } from '@angular/router';
 })
 export class IglesiaMatrizPage {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router,
+    public menu: MenuController) { }
 
-  salir() {
-    this.route.navigate(['/login']);
+  regresar() {
+    this.route.navigate(['privado/iglesia']);
+  }
+
+    
+  ionViewWillEnter() {
+    this.menu.enable(false);
+  }
+
+  ionViewWillLeave() {
+    this.menu.enable(false);
   }
 
 }
