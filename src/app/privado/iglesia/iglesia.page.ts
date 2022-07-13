@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 
 @Component({
@@ -6,25 +7,18 @@ import { MenuController } from '@ionic/angular';
   templateUrl: './iglesia.page.html',
   styleUrls: ['./iglesia.page.scss'],
 })
-export class IglesiaPage implements OnInit {
+export class IglesiaPage { 
 
-  public paneEnabled: boolean = false;
+  paneEnabled = true;
+  
+  constructor(private route: Router, public menu: MenuController) { }
 
-  constructor(private menu: MenuController) { }
-
-  ngOnInit() {
-  }
-
-  async ionViewWillEnter() {
-    console.log('iglesia.ionViewWillEnter()');
-    this.paneEnabled = true;
-    const menuId = await this.menu.enable(true, 'second');
-    console.log('menuId: ', menuId);
+  salir() {
+    this.route.navigate(['/login']);
   }
   
-  ionViewWillLeave() {
-    console.log('iglesia.ionViewWillLeave()');
-    this.paneEnabled = false;
+  ionViewWillEnter() {
+    this.menu.enable(false);
   }
 
 }

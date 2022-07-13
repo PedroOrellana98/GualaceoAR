@@ -1,28 +1,12 @@
-<ion-split-pane contentId="content2" [disabled]="!paneEnabled">
-  <ion-menu contentId="content2" menuId="second">
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pagina Principal</ion-title>
+    <ion-button id="botonSalir" color="primary" shape="round" fill="solid"(click)="salir()"> 
+      Salir</ion-button>
+  </ion-toolbar>
+</ion-header>
 
-    <ion-header>
-      <ion-toolbar color="primary">
-        <ion-title>Menu 2</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
-    <ion-content>
-      <ion-list>
-        <ion-menu-toggle auto-hide="false" menu="second">
-
-        <ion-item routerLink="../../login" routerDirection="root" routerLinkActive="active-item">
-          <ion-label>Login</ion-label> 
-        </ion-item>
-
-        </ion-menu-toggle>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
-
-  <ion-router-outlet id="content2"></ion-router-outlet>
-</ion-split-pane>
-
+<ion-content>
   <ion-list>
     <ion-item detail href="../iglesia-matriz/">
         <img src="../../../assets/icon/Iglesia.jpeg " style="height: 100px; width: 150px; margin-right: 10px; margin-bottom: 50px; margin-top: 50px;">
@@ -46,3 +30,4 @@
       </ion-label>
     </ion-item>
   </ion-list>
+</ion-content>

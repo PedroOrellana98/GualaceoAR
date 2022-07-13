@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-iglesia-matriz',
   templateUrl: './iglesia-matriz.page.html',
   styleUrls: ['./iglesia-matriz.page.scss'],
 })
-export class IglesiaMatrizPage implements OnInit {
+export class IglesiaMatrizPage {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
-  ngOnInit() {
+  salir() {
+    this.route.navigate(['/login']);
   }
 
 }
