@@ -26,16 +26,17 @@ const routes: Routes = [
   {
     path: 'codigo-qr',
     loadChildren: () => import('./codigo-qr/codigo-qr.module').then( m => m.CodigoQRPageModule)
-  },  {
-    path: 'iglesia-matriz',
+  },
+  {
+    path: 'privado/iglesia-matriz',
     loadChildren: () => import('./privado/iglesia-matriz/iglesia-matriz.module').then( m => m.IglesiaMatrizPageModule)
   },
   {
-    path: 'acueducto',
+    path: 'privado/acueducto',
     loadChildren: () => import('./privado/acueducto/acueducto.module').then( m => m.AcueductoPageModule)
   },
   {
-    path: 'calle',
+    path: 'privado/calle',
     loadChildren: () => import('./privado/calle/calle.module').then( m => m.CallePageModule)
   },
 

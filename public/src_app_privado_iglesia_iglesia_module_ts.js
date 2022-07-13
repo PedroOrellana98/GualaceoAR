@@ -111,13 +111,13 @@ let IglesiaPage = class IglesiaPage {
         this.route.navigate(['login']);
     }
     iglesia() {
-        this.route.navigate(['iglesia-matriz']);
+        this.route.navigate(['privado/iglesia-matriz']);
     }
     calle() {
-        this.route.navigate(['calle']);
+        this.route.navigate(['privado/calle']);
     }
     acueducto() {
-        this.route.navigate(['acueducto']);
+        this.route.navigate(['privado/acueducto']);
     }
     ionViewWillEnter() {
         this.menu.enable(false);

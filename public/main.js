@@ -44,15 +44,15 @@ const routes = [
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_codigo-qr_codigo-qr_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./codigo-qr/codigo-qr.module */ 5331)).then(m => m.CodigoQRPageModule)
     },
     {
-        path: 'iglesia-matriz',
+        path: 'privado/iglesia-matriz',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_privado_iglesia-matriz_iglesia-matriz_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./privado/iglesia-matriz/iglesia-matriz.module */ 2733)).then(m => m.IglesiaMatrizPageModule)
     },
     {
-        path: 'acueducto',
+        path: 'privado/acueducto',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_privado_acueducto_acueducto_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./privado/acueducto/acueducto.module */ 3846)).then(m => m.AcueductoPageModule)
     },
     {
-        path: 'calle',
+        path: 'privado/calle',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_privado_calle_calle_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./privado/calle/calle.module */ 3338)).then(m => m.CallePageModule)
     },
 ];
