@@ -14,10 +14,14 @@ export class IglesiaPage {
   constructor(private route: Router, public menu: MenuController) { }
 
   salir() {
-    this.route.navigate(['/login']);
+    this.route.navigate(['login']);
   }
   
   ionViewWillEnter() {
+    this.menu.enable(false);
+  }
+
+  ionViewWillLeave() {
     this.menu.enable(false);
   }
 

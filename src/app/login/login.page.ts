@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { NavigationExtras, Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 import { Usuario } from '../domain/usuario';
 import { UsuariosService } from '../services/usuarios.service';
 
@@ -17,7 +18,8 @@ export class LoginPage implements OnInit {
   valUsr: Usuario = new Usuario();
 
   constructor(private usuarioService: UsuariosService,
-    private route:Router, private afAuth: AngularFireAuth) { }
+    private route:Router, private afAuth: AngularFireAuth,
+    public menu: MenuController) { }
 
   ngOnInit() {
   }
@@ -52,4 +54,9 @@ export class LoginPage implements OnInit {
   registrar(){
     this.route.navigate(['registrar']);
   }
+
+  ionViewWillEnter() {
+    this.menu.enable(true);
+  }
+  
 }

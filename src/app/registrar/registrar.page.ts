@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 import { Usuario } from '../domain/usuario';
 import { UsuariosService } from '../services/usuarios.service';
 
@@ -18,7 +19,8 @@ export class RegistrarPage implements OnInit {
 
   constructor(private route: ActivatedRoute, 
       private usuarioService: UsuariosService,
-      private router: Router) { 
+      private router: Router,
+      public menu: MenuController) { 
 
     route.queryParams.subscribe(params => {
       this.nombre = params.nombre
@@ -43,8 +45,13 @@ export class RegistrarPage implements OnInit {
       this.router.navigate(['login'],params);
     }
   }
+
   regresar(){
     this.router.navigate(['login']);
+  }
+
+  ionViewWillEnter() {
+    this.menu.enable(true);
   }
 
 }

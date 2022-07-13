@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-codigo-qr',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CodigoQRPage implements OnInit {
 
-  constructor() { }
+  constructor(public menu: MenuController) { }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
+    this.menu.enable(true);
   }
 
 }
