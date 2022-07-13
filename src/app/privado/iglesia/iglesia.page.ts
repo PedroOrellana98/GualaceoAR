@@ -15,6 +15,18 @@ export class IglesiaPage {
     this.route.navigate(['login']);
   }
   
+  iglesia() {
+    this.route.navigate(['iglesia-matriz']);
+  }
+
+  calle() {
+    this.route.navigate(['calle']);
+  }
+
+  acueducto() {
+    this.route.navigate(['acueducto']);
+  }
+
   ionViewWillEnter() {
     this.menu.enable(false);
   }

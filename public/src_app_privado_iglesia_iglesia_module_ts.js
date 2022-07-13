@@ -110,6 +110,15 @@ let IglesiaPage = class IglesiaPage {
     salir() {
         this.route.navigate(['login']);
     }
+    iglesia() {
+        this.route.navigate(['iglesia-matriz']);
+    }
+    calle() {
+        this.route.navigate(['calle']);
+    }
+    acueducto() {
+        this.route.navigate(['acueducto']);
+    }
     ionViewWillEnter() {
         this.menu.enable(false);
     }
@@ -149,7 +158,7 @@ module.exports = "page-places-detail ion-row {\n  background-color: #019689;\n}\
   \**************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-button id=\"botonSalir\" color=\"primary\" shape=\"round\" fill=\"solid\" (click)=\"salir()\"> \r\n      Salir</ion-button>\r\n    <ion-title id=\"tituloPrincipal\">Pagina Principal</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-list>\r\n    <ion-item detail href=\"../iglesia-matriz/\">\r\n        <img src=\"../../../assets/icon/Iglesia.jpeg \" style=\"height: 100px; width: 150px; margin-right: 10px; margin-bottom: 50px; margin-top: 50px;\">\r\n      <ion-label>\r\n        <h2>Iglesia de Gualaceo</h2>\r\n        <p>Ubicacion: <a href=\"https://maps.google.com/?q=-2.889692978845055, -78.77878400341795\">Aqui</a></p>\r\n      </ion-label>\r\n    </ion-item>\r\n    <ion-item detail href=\"../calle/\">\r\n        <img src=\"../../../assets/icon/CalleGC.jpeg\" style=\"height: 100px; width: 150px; margin-right: 10px; margin-bottom: 50px; margin-top: 50px;\">\r\n      <ion-label>\r\n        <h2>Calle Gran Colombia</h2>\r\n        <p>Ubicacion: <a href=\"https://maps.google.com/?q=-2.8899217627170795, -78.77957520358747\">Aqui</a></p>\r\n      </ion-label>\r\n    </ion-item>\r\n    <ion-item detail href=\"../acueducto/\">\r\n        <img src=\"../../../assets/icon/Acueducto.jpg\" style=\"height: 100px; width: 150px; margin-right: 10px; margin-bottom: 50px; margin-top: 50px;\">\r\n      <ion-label>\r\n        <h2>Canal de riego</h2>\r\n        <p>Ubicacion: <a href=\"https://maps.google.com/?q=-2.903407969576315, -78.77972910708982\">Aqui</a></p>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-button id=\"botonSalir\" color=\"primary\" shape=\"round\" fill=\"solid\" (click)=\"salir()\"> \r\n      Salir</ion-button>\r\n    <ion-title id=\"tituloPrincipal\">Pagina Principal</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-list>\r\n    <ion-item detail (click)=\"iglesia()\">\r\n        <img src=\"../../../assets/icon/Iglesia.jpeg \" style=\"height: 100px; width: 150px; margin-right: 10px; margin-bottom: 50px; margin-top: 50px;\">\r\n      <ion-label>\r\n        <h2>Iglesia de Gualaceo</h2>\r\n        <p>Ubicacion: <a href=\"https://maps.google.com/?q=-2.889692978845055, -78.77878400341795\">Aqui</a></p>\r\n      </ion-label>\r\n    </ion-item>\r\n    <ion-item detail (click)=\"calle()\">\r\n        <img src=\"../../../assets/icon/CalleGC.jpeg\" style=\"height: 100px; width: 150px; margin-right: 10px; margin-bottom: 50px; margin-top: 50px;\">\r\n      <ion-label>\r\n        <h2>Calle Gran Colombia</h2>\r\n        <p>Ubicacion: <a href=\"https://maps.google.com/?q=-2.8899217627170795, -78.77957520358747\">Aqui</a></p>\r\n      </ion-label>\r\n    </ion-item>\r\n    <ion-item detail (click)=\"acueducto()\">\r\n        <img src=\"../../../assets/icon/Acueducto.jpg\" style=\"height: 100px; width: 150px; margin-right: 10px; margin-bottom: 50px; margin-top: 50px;\">\r\n      <ion-label>\r\n        <h2>Canal de riego</h2>\r\n        <p>Ubicacion: <a href=\"https://maps.google.com/?q=-2.903407969576315, -78.77972910708982\">Aqui</a></p>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>";
 
 /***/ })
 
